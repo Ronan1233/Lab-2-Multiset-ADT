@@ -1,15 +1,27 @@
 public class TreeMultiSet extends MultiSet {
 
-    // TODO add a Tree object as a private instance variable for this class.
-    /**
-     * Add the given item to this multiset.
-     *
-     * @param item the item to add
-     */
+    Tree a_tree;
+
+    public TreeMultiSet() {
+        this.a_tree = new Tree();
+    }
     @Override
     void add(Integer item) {
-        // TODO complete this method
+        a_tree.insert(item);
     }
-    // TODO write the rest of the implementation for this class so that it uses its private Tree
-    //      object to provide the MultiSet functionality.
+    void remove(Integer item) {
+        a_tree.delete_item(item);
+    }
+    boolean contains(Integer item) {
+        return a_tree.__contains__(item);
+    }
+    boolean is_empty() {
+        return a_tree.is_empty();
+    }
+    int count(Integer item) {
+        return a_tree.count(item);
+    }
+    int size() {
+        return a_tree._average_helper()[1];
+    }
 }
